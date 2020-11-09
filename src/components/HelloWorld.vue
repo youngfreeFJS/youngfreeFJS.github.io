@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ isMobile }}</h1>
     <h2>Essential Links</h2>
     <el-row>
       <el-button type="danger" plain @click="getLink('pingyao')">平遥古城</el-button>
@@ -23,7 +23,13 @@ export default {
       link = routeData.href
       window.open(link, '_blank')
     }
+  },
+  computed: {
+    isMobile: function () {
+      return this.$store.state.isMobile
+    }
   }
+
 }
 </script>
 
